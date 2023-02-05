@@ -2,7 +2,7 @@
 
 ## 機能概要
 
-MySQLのバックアップ/リストアを実行できるユーティリティで、従来のmysqldumpと比較して並列スレッドで実行することにより、高速な論理バックアップ/リストアを行うことができます。また、テーブルのレコードにあたるファイルは自動的に圧縮されるため、リダイレクトして圧縮コマンドを使うことなくストレージ領域の節約が可能です。
+MySQLのバックアップ/リストアを実行できるユーティリティで、従来のmysqldumpと比較して並列スレッドで実行することにより、高速な論理バックアップ/リストアを行うことができます。また、テーブルのデータは自動的に圧縮されるため、リダイレクトして圧縮コマンドを使うことなくストレージ領域の節約が可能です。
 
 ## install
 
@@ -131,6 +131,8 @@ MySQL >util.dumpSchemas(["testdb"], "C:/temp/dbdump/testdb")
 
 3. MySQL Shellにログインして、loadDumpを実行します。
 
+
+```shell:mysqlshell
 > mysqlsh -h localhost -u testuser -p
 MySQL >util.loadDump("C:/temp/dbdump/testdb", {showProgress: true, schema: "testdb5"})
 ```
@@ -138,3 +140,5 @@ MySQL >util.loadDump("C:/temp/dbdump/testdb", {showProgress: true, schema: "test
 結果は以下の通りです。
 
 ![](2023-02-05-15-37-04.png)
+
+
