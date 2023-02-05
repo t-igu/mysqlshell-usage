@@ -79,6 +79,7 @@ mysqlのダンプを取得することができます。mysqlshellにログイ�
 > util.dumpTables(schema, tables, outputUrl[, options])
 ```
 
+ユーザーは、BACKUP_ADMIN, EVENT, RELOAD, SELECT, SHOW VIEW, and TRIGGER権限を持っている必要です。
 outurlは出力先のディレクトリ名を指定します。
 
 詳しい説明については[公式サイト](https://dev.mysql.com/doc/mysql-shell/8.0/ja/mysql-shell-utilities-dump-instance-schema.html)などを参考にしてください。
